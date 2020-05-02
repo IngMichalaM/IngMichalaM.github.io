@@ -14,41 +14,43 @@ $('#myButton').click( () => {
 let myColors = ['#CC99FF', '#FF99FF'];
 // light purple , orange light 
 // works let myColors = ['red', 'green'];
+
 let countClick = 0; 
 
 // works ok as well
 $('#myButton').on('click', function() {  
    // check that the input is not empty 
    if($('input').val() == ''){
-    // if is empty, change the background color 
+    // if is empty, change the background color to red
     $('#nameInputField').css('background', '#FF0000')   
-     // alert('Input can not be left blank');
+    // but don't add an empty item. You can even use an alert: 
+             // alert('Input can not be left blank');
    } else {
      // now, since the input is valid, do all the changes: 
      //   add it to the list and 
-     //   change the color of the input and the button
+     //   change the color of the input and the of the button
       $( "ul" ).append( "<li>" + nameInputField.value +" </li>" )     
       // could be also $('ul').append(`<li>${$('input').val()}</li>`);
       countClick++; // counting the clicks
-      console.log('Number of clicks: ' + countClick);
-      let colorPick = countClick%2; 
+      console.log('Number of clicks: ' + countClick); // writes number of clics to the consol log
+      let colorPick = countClick%2; // modulo - it will be alway 0 or 1 - then pick the color from the array of two colors 
       // change the color of the button based on the number of clicks :-)
-      $('button').css('background', myColors[colorPick]) 
-      $('#nameInputField').css('background', myColors[colorPick])   
-      // works $('button').css('background', 'green')       
-   }
+      $('button').css('background', myColors[colorPick]) // color of the "add" button
+      $('#nameInputField').css('background', myColors[colorPick])   // color of the input 
+      
+      // adding the signs - trash and tick - append to the <li>, so <li> is "parent"
+      $("li:last-child").append(         
+        "<img src='trash_sign.png' alt='trash' class='image-trash' />"             
+      )
+
+      $("li:last-child").append(         
+        "<img src='tick_sign.png' alt='tick' class='image-tick' />  "             
+      )     
+   } // end of else
  
     // needs to be deleted AFTER it checks wheter it is empty or not 
     $("#nameInputField").val(""); // delete value from input  
-
-});
-
-/* not working , does not matter if <li> or <ul> is used as selector 
-$('li').click(() => {
-  // not working $(this).css('text-decoration', 'line-through')
-   $(this).toggleClass('scratched'); // scratched - defined as style in css
-}); */
-
+}); // end of "click" function
 
 //  text line-through (cz: skrtnout polozku seznamu)
 $("ul").on("click", "li", function(){ 
@@ -56,25 +58,15 @@ $("ul").on("click", "li", function(){
 })
 
 
-$("p").click(() => {
-  alert("The paragraph was clicked on.");
-}); 
-
-/*
-.stroked{ text-decoration: line-through; }
-
-then just:
-
-$(document).ready(function() {
-    $(".button1").click(function() {
-    $("ul li:nth-child(1)").toggleClass('stroked');
-    });
+// ---- handling the clicks on the trash and tick ikon
+// removes the item 
+ $("ul").on("click", ".image-trash", function(){
+  // $(this).remove(); // removes only the image of the bin
+  $(this).parent().remove(); 
 });
- */
 
-
-/* od jineho ucastnikskrtnout polozku seznamu
-$("ul").on("click", "li .todo-text", function(){ // CORRECT
-  $(this).toggleClass("scratched"); // CORRECT
-})*/
-       
+// change the color item to green (and teh cross out stays)
+$("ul").on("click", ".image-tick", function(){
+  // $(this).remove(); // removes only the image of the bin
+  $(this).parent().css('color', 'green'); 
+});

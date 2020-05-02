@@ -1,7 +1,7 @@
 body {
     font-family: 'Lobster Two', cursive;
     margin: 10px auto 10px auto;
-    width: 400px;
+    width: 500px;
     background: lightblue;
 }
 
@@ -9,14 +9,6 @@ header {
    border: solid #9933FF 2px; 
    border-radius: 10px;
    text-align: center;
-
-}
-
-div {
-    text-align: center;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 section {
@@ -41,15 +33,6 @@ button {
     font-family: 'Lobster Two', cursive; /* was not working without - when only defined in <body>*/
 }
 
-/* not in use 
-#myButton {
-    background-image: linear-gradient(to right, #FF512F 0%, #F09819 51%, #FF512F 100%)
-};
-
-#myButton:hover { 
-    background-position: right center; 
-} */
-
 #nameInputField {
     background: #CCE5FF;
     width: 200px;
@@ -59,9 +42,8 @@ button {
     height: 40px;
     font-size: x-large;
     font-family: 'Lobster Two', cursive; /* was not working without - when only defined in <body>*/
+    color: grey;
 }
-
-.stroked{ text-decoration: line-through; }
 
 .scratched {
     text-decoration: line-through;
@@ -69,5 +51,39 @@ button {
   }
 
   li {
-      font-size: x-large;
+      font-size: x-large;    
+      position: relative;
+      margin-bottom: 3px;
   }
+
+  ul {
+    text-align: left;
+  }
+  
+  img {
+      height: 30px; 
+  }
+
+  .image-trash {
+      position: absolute; 
+      right: 45px; 
+      margin: 3px;
+      padding: 3px; 
+  }
+
+  .image-tick {
+    position: absolute; 
+    right: 5px;
+    margin: 3px;
+    padding: 3px; 
+}
+
+.image-trash:hover {
+    color: red;
+    background: red;    
+}
+
+.image-tick:hover {
+    color: green;
+    background: green;
+}
