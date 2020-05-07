@@ -76,7 +76,13 @@ let loadPhoto = (photoNumber) => {
     //$('h1').toggleclass('highlighted_thumbnail');
     // works $('.thumbnail').toggleClass('highlighted_thumbnail');
     // not workingfor the run number on, before the arrowas are clicked  $("[data-number="+imagesData[photoNumber].photo_number+"]").css('border', 'black 4px solid');
-    $("[data-number="+imagesData[photoNumber].photo_number+"]").css('border', 'black 4px solid');
+    // before, whern the photo_number qas within the input data array $("[data-number="+imagesData[photoNumber].photo_number+"]").css('border', 'black 4px solid');
+    
+    $("[data-number='"+ photoNumber+ "']").css('border', 'black 4px solid');
+    
+    //$("'[data-number="+photoNumber+"]'").css('border', 'black 4px solid');
+    
+    
     // $("[data-number="+imagesData[photoNumber].photo_number+"]").toggleClass('highlighted_thumbnail');
 
     // probably doing by indexClicked = $(event.target).attr('data-number');
@@ -128,11 +134,12 @@ imagesData.forEach((item, index) => {
 "<div class='each_thumbnail_div'><img src=" + item.photo + " class='thumbnail' data-number= '" + index + "'> <div class='thumbnail_title'>" + item.title + "</div></img></div>")
        // ------------- create the small hiden titles as well ----------
       // place them and hide them
-      // only show them when hoover - toggleClass
-      
+      // only show them when hoover - toggleClass      
   });
 
-  $("[data-number="+imagesData[0].photo_number+"]").css('border', 'black 4px solid');
+  $("[data-number='0']").css('border', 'black 4px solid');
+
+
   //$("[data-number-1]").css('border', 'red 4px solid');
 
 // ----------- visibility of the titles of the thumbnails ---------
