@@ -3,31 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PrettyTunedToDoList</title>
+    <title>Gallery</title>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-    <header>
-        <h1>My Pretty Tuned ToDo List</h1>
-    </header>
+ 
+        <!-- Here used to be a <section> containing everything 
+            it was created only to do the color-gradient background 
+            This was now done as box-shadow on the followind <div> class -->
 
-    <section>
-        <h2>Todos</h2>       
-        <div>
-            <input type="text" id="nameInputField" value="milk">      
-            <button type="button" id="myButton"> Add an item</button> 
-        </div> 
+        <div class="whole_galery glowing-border">
+            <!-- this div contains the content itself - the pictures, arrow and thumbnails -->
+            <div class="arrow left">
+                <img src="http://stayathome-syllabus.greenfox.academy/week03/assets/arrow.svg" alt="arrow_left" id="left-arrow">
+            </div>
 
-            <!-- here will go the li of ul of a to do list-->
-            <ul class= "todos"> 
-            </ul>
-         
-    </section>
+            <div class="image_and_text">
+                <img id="photo">
+                <!-- <img src="image\vyber\im4.jpg", alt="some photo", id="photo"> -->
+                <div class="gray-container">              
+                    <h1 id="photo-title"> </h1>
+                    <p id="photo-description"> </p>
+                </div>
+            </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
-    <script src="scripts.js">     </script>
+            <div class="arrow right">
+                <img src="http://stayathome-syllabus.greenfox.academy/week03/assets/arrow.svg" alt="arrow_right" id="right-arrow">
+            </div>
+        </div>
+
+        <div class="thumbnails_container">
+            <!--   <div class="each_thumbnail_div">
+               <img src="image\vyber\im01.jpg" alt="im01" class="thumbnail" data-number="1">
+               <div class="thumbnail_title">thumb1111111 1111nail Im 01 title</div>
+            </div>
+            <div class="each_thumbnail_div">
+                <img src="image\vyber\im01.jpg" alt="im02" class="thumbnail" data-number="2">
+                <div class="thumbnail_title"> 02 e</div>
+            </div>    
+            <div class="each_thumbnail_div">    
+              <img src="image\vyber\im01.jpg" alt="im03" class="thumbnail"  data-number="3">
+                <div class="thumbnail_title">thumbnail im 3 here </div>
+            </div>        
+           <img src="image\vyber\im01.jpg" alt="im04" class="thumbnail"  data-number="4">
+
+
+           <a href="image\vyber\im01.jpg" > </a>
+
+            <a href="image\vyber\im02.jpg" >
+                <img src="image\vyber\im02.jpg" alt="im02" class="thumbnail">
+            </a>
+
+            <a href="image\vyber\im4.jpg" >
+                <img src="image\vyber\im4.jpg" alt="im4" class="thumbnail">
+            </a>  -->
+
+        </div> <!-- end of  <div class="thumbnails_container"> -->
+        
+    <!-- here ws end of the <section> --> 
+<!-- here goes sripts   -->  
+
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script src="script.js">     </script> 
 
 </body>
 </html>
