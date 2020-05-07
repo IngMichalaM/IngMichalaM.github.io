@@ -171,10 +171,13 @@ imagesData.forEach((item, index) => {
   
   // the  "right way" but it should be INSIDE (!!?) the forEach loop, no idea why 
   $('.thumbnail').click((event) => {
-    let indexClicked = $(event.target).attr('data-number');
+    let indexClicked = $(event.target).attr('data-number'); // get the picture number
     console.log("The "  + indexClicked + ". thumbnail was clicked on")
     let numberIndex = parseInt(indexClicked); // now numberIndex is a number
     loadPhoto(numberIndex);
+    // and you need to update the "currentPhoto" so that the arrows work ok as well
+    currentPhoto = numberIndex;
+
 
     // data-number is the atribute and its number is saved in imagesData.photo_number
     // this number does not correspond to the number in the data array imagesData.
