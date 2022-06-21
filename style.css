@@ -6,27 +6,6 @@ body {
     font-family: 'Courgette', cursive;
 
 }
-/*body {
-   /* background-image: radial-gradient(ellipse 600px 400px, #404040 45%, #E0E0E0 90%);*/
-   /*background-image:  radial-gradient(
-  [ [ <shape> || <size> ] [ at <position> ]? , |
-    at <position>, 
-  ]?
-  <color-stop> [ , <color-stop> ]+
-)
-    border: solid black 2px;
-    width: 1200px;
-    height: 800px;
-  }*/
-  
-/*
- section {*/
-    /*background-image: radial-gradient(ellipse, #A0A0A0 45%, #E0E0E0 100%);*/
-  /* border: yellow dotted 5px; 
-    width: 1200px;
-    height: 800px;
-    position: fixed;
-    }*/
 
 /* The background blur shadowy color was initially done within the "section" element
 using the radial-gradient ellipse. Doing so, the "section" element needed to be created.
@@ -37,15 +16,6 @@ Now I try the shadow of the box <div> element with hte arrowas and the photo.
 It can be blured and probably done in the way that it is all way around.
 Then the "section" element would not be necessary at all.
 
-div.whole_galery has "position fixed " anyway.
-
-The definition of the box-shadow is:
- offset-x | offset-y | blur-radius | spread-radius | color 
-box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-and 
-Any number of shadows, separated by commas 
-box-shadow: 3px 3px red, -1em 0 0.4em olive;
-
 The box-shadow needs to be inside the box around which it will appera - so the div element
 
 !! works great !!
@@ -53,26 +23,6 @@ box-shadow: 0px 0px 200px 10px  black; - exactly what I was trying to do using t
 But this is much easier. 
 Lets try to get rid of the "section" which is now not needed.
 */    
-
-    /*
-section {
-    /*background-color:#9999FF; /* blue kind of 
-    background-image: radial-gradient(ellipse, #404040 45%, #E0E0E0 90%);
-    /*border: yellow dotted 0px;
-    width: 1200px;
-    height: 800px;
-    position: fixed
-    }*/
-
-    /* transition of the colors
-    https://css-tricks.com/almanac/properties/t/transition/*/
-
-/* body:hover {
-    background-color: #CC99FF; 
-    E5CCFF - light purple,
-     #CC99FF - little bit more purple 
-    }*/
-
     
 .whole_galery {
     /* this div contains the content itself - the pictures, arrow and thumbnails */
@@ -82,43 +32,25 @@ section {
     
     /*position: absolute;*/
     margin: 0 auto 0 auto; 
-
-    /*top: 50%;*/
-    /*left: 50%;
-    margin-top: -50px;
-    margin-left: -50px;*/
-
-    /* the "auto" ceneter it horiontally and 
+    /* the "auto" center it horiontally and 
     the 200px vertically */
     /*border: solid blue 5px; */
     display: flex;
     justify-content: space-around;
     /*space-between; center*/
     /*align-items: center;*/
-    /*position: fixed; */
-    /*I probably missunderstood this: 
-    It should be in the middle of the screen, with fixed size
-    So we can get rid of the fixed position and use flex for this and the 
-    thumbnails container. */
-    /*top: 175px;
-    left: 200px;*/
-
     box-shadow: 0px 0px 200px 10px  black;
     /*    The definition of the box-shadow is:
-    offset-x | offset-y | blur-radius | spread-radius | color 
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    and 
-    Any number of shadows, separated by commas 
-    box-shadow: 3px 3px red, -1em 0 0.4em olive;*/
+    offset-x | offset-y | blur-radius | spread-radius | color */
    } 
 
 .image_and_text {
     /*border: green solid 10px; */
-    width: 80%;
+    width: 100%; 
+    /*display: flex;  */
     /*flex-grow: 20;*/
     /*position: absolute;*/
-    position: relative;
-   /* display: flex;*/
+    position: relative; /* relative to its parent box*/ 
 }
 
 #photo {
@@ -133,12 +65,16 @@ section {
 
 .arrow {
     /* class of the div of the left and right arrows */
-    background: white;
-    /*margin: auto 35px auto 5px;*/
+    /*background: yellow; */
+   /* margin: auto 35px auto 5px;*/
    /* margin: auto 0px auto 0px;*/
-    /*border: red solid 1px;   */
-    flex-grow: 1;
-    padding-left: 15px;
+    /*border: red solid 1px;  
+    padding-left: 15px;*/
+    /*padding-left: 15px;*/
+    /*display: flex;  
+    flex-grow: 1;*/
+    width: 10%; 
+    
 }
 
 /* left and right are classes of the div containers of the left and right arrows">*/
@@ -146,26 +82,27 @@ section {
 
 #left-arrow {
     /* #left-arrow { id of the left image arrow*/
-    /*background: lightblue;    */
+    background: white; 
     /* contain: The image keeps its original aspect ratio, but resized so that the longest of either the height or width can fit in the given dimensions.*/
     object-fit: contain;
-    width: 20%;
+    width: 100%;
     height: 100%;
-    
+    transform: rotate(180deg);
     /*padding-top: 150px;*/
     /*padding-left: 10px;
     padding-right: 10px;
     margin: 0 auto 0 auto; 
-    margin: auto 0px auto 0px;    */
+    margin: auto 0px auto 0px; 
+       */
+
 }
-
-
 
  #right-arrow {
         /*- id of the right image arrow*/
         object-fit: contain;
-        width: 20%;
-        height: 100%;                
+        width: 100%;
+        height: 100%;   
+        background: white;  
 }
 
 
@@ -180,14 +117,20 @@ section {
     --odrazka: 50px;    
   }
 
-.left {
-   /* transform: rotate(180deg);*/
-    box-shadow: 10px 10px;
+/*
+.right {
+    transform: rotate(0deg);
+    box-shadow: 10px 10px; 
 }
+
+.left {
+    transform: rotate(180deg);
+    box-shadow: 10px 10px; 
+}*/
 
 .gray-container {
     /*background-color: rgba(255,255,255, 1);   */
-    background-color: rgba(0,0,0, 0.5); /*000 is black, opacity goes only to the background, not the text <h1> and <p>*/   
+   background-color: rgba(0,0,0, 0.5); /* 000 is black, opacity goes only to the background, not the text <h1> and <p>*/   
     /*background-color: black; */
     width: 100%;
     /*height: 100px; */
@@ -348,4 +291,3 @@ div {
  
 }
 }*/
-
