@@ -149,7 +149,7 @@ section {
     /*background: lightblue;    */
     /* contain: The image keeps its original aspect ratio, but resized so that the longest of either the height or width can fit in the given dimensions.*/
     object-fit: contain;
-    width: 10%;
+    width: 20%;
     height: 100%;
     
     /*padding-top: 150px;*/
@@ -164,7 +164,7 @@ section {
  #right-arrow {
         /*- id of the right image arrow*/
         object-fit: contain;
-        width: 10%;
+        width: 20%;
         height: 100%;                
 }
 
@@ -181,8 +181,8 @@ section {
   }
 
 .left {
-    transform: rotate(180deg);
-   /* box-shadow: 10px 10px;*/
+   /* transform: rotate(180deg);*/
+    box-shadow: 10px 10px;
 }
 
 .gray-container {
