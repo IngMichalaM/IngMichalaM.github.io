@@ -14,8 +14,6 @@ let currentPhoto = 0; // which photo is being displayed.
 // Put them into a JavaScript object with 3 fields (photo, title, desciption)
 // Using jQuery load the photo and the texts into their proper places
 
-
-
 // arrays for the name , title and descritpino
 // whach out for the correct path and the correct "/" or "\"
 
@@ -95,7 +93,7 @@ let loadPhoto = (photoNumber) => {
 
 // --------- the right arrow click ------------------
 
-$('.right').click(() => {
+$('#right-arrow').click(() => {
   currentPhoto++;
   if (currentPhoto > (imagesData.length-1)) {
     currentPhoto = 0;       
@@ -105,7 +103,7 @@ $('.right').click(() => {
   console.log('Index of the current photo is ' + currentPhoto)  
 })
 
-$('.left').click(() => {
+$('#left-arrow').click(() => {
     currentPhoto--;
     if (currentPhoto < 0) {
       currentPhoto =  (imagesData.length-1);       
