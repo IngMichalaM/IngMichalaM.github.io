@@ -65,7 +65,7 @@ Lets try to get rid of the "section" which is now not needed.
 
 .arrow {
     /* class of the div of the left and right arrows */
-    /*background: yellow; */
+    background: yellow; 
    /* margin: auto 35px auto 5px;*/
    /* margin: auto 0px auto 0px;*/
     /*border: red solid 1px;  
